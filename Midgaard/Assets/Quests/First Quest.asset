@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a638043c9b8e39438f98d7065a7fa58, type: 3}
-  m_Name: Ship Oars
+  m_Name: First Quest
   m_EditorClassIdentifier: 
-  title: Finding a sword
-  description: this is a big sword
-  goldReward: 2
+  title: Vikingarna
+  description: "Ta reda p\xE5 hur vikingarna levde genom att hitta olika f\xF6rem\xE5l
+    som ber\xE4ttar mer."
+  goldReward: 3
   isActive: 0
   isComplete: 0
-  questGoal: 0

@@ -27,7 +27,7 @@ public class PlayerVariables : MonoBehaviour
 
     private void Start()
     {
-        trackerText.text = "Hitta alla ledtrådar" + itemsRead + "/" + itemsAmount;
+        trackerText.text = "Hitta alla ledtrådar " + itemsRead + "/" + itemsAmount;
     }
 
     private void Update()
@@ -84,7 +84,7 @@ public class PlayerVariables : MonoBehaviour
                 itemsRead++;
                 other.GetComponent<Item>().itemCounted = true;
 
-                trackerText.text = "Hitta alla ledtrådar" + itemsRead + "/" + itemsAmount;
+                trackerText.text = "Hitta alla ledtrådar " + itemsRead + "/" + itemsAmount;
 
                 if (itemsRead > itemsAmount)
                 {
