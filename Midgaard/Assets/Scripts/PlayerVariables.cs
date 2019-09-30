@@ -29,7 +29,7 @@ public class PlayerVariables : MonoBehaviour
 
     private void Start()
     {
-        trackerText.text = "Hitta alla artefakter från vikingatiden: " + itemsRead + "/" + itemsAmount;
+        trackerText.text = "Lär dig om artefakter från vikingatiden: " + itemsRead + "/" + itemsAmount;
     }
 
     private void Update()
@@ -89,7 +89,7 @@ public class PlayerVariables : MonoBehaviour
                 jc.itemFound[other.GetComponent<Item>().journalIndex] = true;
                 jc.ChangeIconColor(other.GetComponent<Item>().journalIndex);
 
-                trackerText.text = "Hitta alla artefakter från vikingatiden: " + itemsRead + "/" + itemsAmount;
+                trackerText.text = "Lär dig om artefakter från vikingatiden: " + itemsRead + "/" + itemsAmount;
 
                 if (itemsRead >= itemsAmount)
                 {
@@ -110,13 +110,13 @@ public class PlayerVariables : MonoBehaviour
 
         if (q.isActive)
         {
-            qBottomText.text = "Come back once you've completed the quest";
+            qBottomText.text = "Kom tillbaka när du har hittat alla föremål";
         }
         if (q.isComplete)
         {
-            qTitleText.text = "Complete";
-            qDescText.text = "Thank you for helping";
-            qBottomText.text = "Press Y to get another quest";
+            qTitleText.text = "Grattis!";
+            qDescText.text = "Du har hittat alla föremål, ta nu tiden att lära dig om artefakterna.";
+            qBottomText.text = "Tryck på 'Mellanslag' för att läsa om kända artefakter";
         }
     }
 

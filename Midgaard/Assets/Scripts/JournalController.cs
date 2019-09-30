@@ -36,14 +36,14 @@ public class JournalController : MonoBehaviour
             i--;
             if(i < 0)
             {
-                i = 6;
+                i = itemFound.Length;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             i++;
-            if (i > 6)
+            if (i > itemFound.Length)
             {
                 i = 0;
             }

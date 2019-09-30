@@ -15,6 +15,9 @@ public class Item : MonoBehaviour
 
     public float timeToRead = 5f;
 
+    public float currentAlpha;
+    public bool pulse;
+
     private void Update()
     {
         if (timerActive)
@@ -24,6 +27,33 @@ public class Item : MonoBehaviour
         if (timer > timeToRead)
         {
             itemRead = true;
+        }
+
+        if(!itemRead)
+        {
+            if (currentAlpha <= 0.0f)
+            {
+                pulse = true;
+            }
+            else if (currentAlpha >= 0.2f)
+            {
+                pulse = false;
+            }
+
+            if (pulse)
+            {
+                currentAlpha += Time.deltaTime * 0.2f;
+            }
+            else
+            {
+                currentAlpha -= Time.deltaTime * 0.2f;
+            }
+
+            Color c = GetComponent<SpriteRenderer>().color;
+            GetComponent<SpriteRenderer>().color = new Color(currentAlpha, currentAlpha, currentAlpha, 1);
+        } else
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
     }
 
@@ -37,4 +67,5 @@ public class Item : MonoBehaviour
         timerActive = false;
         timer = 0;
     }
+    
 }
