@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: First Quest
   m_EditorClassIdentifier: 
   title: Vikingarna
-  description: "Ta reda p\xE5 hur vikingarna levde genom att hitta olika f\xF6rem\xE5l
-    som ber\xE4ttar mer."
+  description: "L\xE4r dig om hur vikingarna levde genom att hitta olika artefakter
+    fr\xE5n vikingatiden."
   goldReward: 3
   isActive: 0
   isComplete: 0

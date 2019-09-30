@@ -7,7 +7,7 @@ public class QuestGiver : MonoBehaviour
     public Quest[] quests;
     private int currentQuestIndex;
     
-    private void IncreaseQuestIndex()
+    public void IncreaseQuestIndex()
     {
         currentQuestIndex++;
     }
@@ -15,10 +15,5 @@ public class QuestGiver : MonoBehaviour
     public Quest GetQuest()
     {
         return quests[currentQuestIndex];
-    }
-
-    public void QuestCompleted()
-    {
-        
     }
 }

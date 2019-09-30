@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerVariables : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class PlayerVariables : MonoBehaviour
     public int itemsAmount = 10;
 
     public JournalController jc;
+
+    public QuestGiver questGiver;
+
+    private bool timerOn = false;
+    private float timer = 0;
 
     private void Start()
     {
@@ -54,6 +60,18 @@ public class PlayerVariables : MonoBehaviour
         {
             // Deny the quest
             questDialog.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        if (itemsRead >= itemsAmount)
+        {
+            // Quest to find all items is complete
+            qDescText.text = "Grattis! Du har hittat alla artefakter.";
+            qBottomText.text = "Tryck på 'Escape' för att gå tillbaka till menyn.";
         }
     }
 
@@ -94,6 +112,8 @@ public class PlayerVariables : MonoBehaviour
                 if (itemsRead >= itemsAmount)
                 {
                     // Quest to find all items is complete
+                    qDescText.text = "Grattis! Du har hittat alla artefakter.";
+                    qBottomText.text = "Tryck på 'Escape' för att gå tillbaka till menyn.";
                     trackerText.text = "Du har hittat alla artefakter!";
                     Debug.Log("All items found");
                 }
