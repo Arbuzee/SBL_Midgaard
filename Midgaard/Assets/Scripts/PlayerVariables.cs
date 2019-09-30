@@ -25,6 +25,8 @@ public class PlayerVariables : MonoBehaviour
     private int itemsRead = 0;
     public int itemsAmount = 10;
 
+    public JournalController jc;
+
     private void Start()
     {
         trackerText.text = "Hitta alla artefakter från vikingatiden: " + itemsRead + "/" + itemsAmount;
@@ -84,11 +86,15 @@ public class PlayerVariables : MonoBehaviour
                 itemsRead++;
                 other.GetComponent<Item>().itemCounted = true;
 
+                jc.itemFound[other.GetComponent<Item>().journalIndex] = true;
+                jc.ChangeIconColor(other.GetComponent<Item>().journalIndex);
+
                 trackerText.text = "Hitta alla artefakter från vikingatiden: " + itemsRead + "/" + itemsAmount;
 
-                if (itemsRead > itemsAmount)
+                if (itemsRead >= itemsAmount)
                 {
                     // Quest to find all items is complete
+                    trackerText.text = "Du har hittat alla artefakter!";
                     Debug.Log("All items found");
                 }
             }

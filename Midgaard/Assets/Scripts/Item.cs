@@ -6,6 +6,7 @@ public class Item : MonoBehaviour
 {
     public string title;
     public string description;
+    public int journalIndex;
 
     private float timer;
     private bool timerActive;
